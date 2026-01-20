@@ -1,4 +1,4 @@
-passwd = input ("Write your password for checking it's robustness: ")
+passwd = input ("Write an example for a password to check it's robustness: ")
 
 def check_if_pass_contains(passwd):
     is_passwd_long(passwd)
