@@ -45,9 +45,9 @@ def has_passwd_special_characters(passwd):
     
 check_if_pass_contains(passwd = passwd)  
 
-#Ønsker å sjekke om den inneholder spesialtegn eller har en annen måte at den har minst 1 av stor og liten bokstav
+#Fikset små bokstaver, store bokstaver, tall og lengde. Mangler korrekt for special characters, samt at man ikke har enkelt 
+#passord å gjette. 
 #Hva kan det være?
-# Minst 1 av stor og liten bokstav kan gjøres ved at man sjekker lengden av passordet, iterer over hver character og deretter 
-# sjekker om den er lower eller ikke. når vi har gått gjennom hele passordet gir vi en tilbakemelding om det er good eller trenger en lower.
+# 
 #
 #Passord for sjekk: lkjhgfds!@#45 | LKJHGFDS!@#45 | LKJHGFDSTEsT45 | LKJHGFDS#$&FTest | Final: LKJHGFDS#$&FTest56
