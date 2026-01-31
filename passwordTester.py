@@ -29,11 +29,9 @@ def has_passwd_numbers(passwd):
             return True
     raise ValueError("Password missing a numeric letter")
 
-
 def is_passwd_long(passwd):
     if len(passwd) < 12:
         raise ValueError("Password is to short, it needs to be 12 characters")
-
 
 def has_passwd_special_characters(passwd):
     for i in range(len(passwd)):
