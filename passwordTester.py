@@ -1,6 +1,6 @@
 passwd = input ("Write an example for a password, not one your about to use, to check it's robustness: ")
 
-not_allowed = ["123", "qwerty", "abc", "ABC", "QWERTY", "321"]
+not_allowed = ["123", "qwerty", "abc", "ABC", "QWERTY", "321", "1234567890@aB"]
 
 score = 0
 
