@@ -58,6 +58,14 @@ def is_passwd_easy_to_guess(passwd, score):
         else: 
             score += 15
             return score
-        
-check_if_pass_contains(passwd = passwd, score = score)  
 
+app = Flask(__name__)
+
+@app.route('/', methods = ['GET', 'POST'])
+
+def passwordChecker():
+    #ønsker her å hente input feltet som det er skrevet noe deretter sjekke da gjennom.
+    return "yolo"
+
+if __name__ == '__main__':
+    app.run(port=8250)
