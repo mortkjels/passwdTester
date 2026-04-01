@@ -1,4 +1,6 @@
-passwd = input ("Write an example for a password, not one your about to use, to check it's robustness: ")
+# passwd = input ("Write an example for a password, not one your about to use, to check it's robustness: ")
+
+from flask import Flask, request, render_template, jsonify, redirect, url_for
 
 not_allowed = ["123", "qwerty", "abc", "ABC", "QWERTY", "321", "1234567890@aB"]
 
