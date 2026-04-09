@@ -1,5 +1,14 @@
-async function testPassword() {
-// her skal det være noe, finn ut. 
-}
+const passid = document.getElementById('passwordInput');
+const butid = document.getElementById('buttonid');
 
-testPassword();
+
+butid.addEventListener('click', () =>{
+
+    const brukerinput = passid.value;
+    if (brukerinput === '') {
+        console.log("Feltet er tomt");} 
+    else {
+        console.log("Du skrev inn: " + brukerinput);
+    }
+
+});
