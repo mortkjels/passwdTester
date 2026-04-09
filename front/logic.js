@@ -6,9 +6,17 @@ butid.addEventListener('click', () =>{
 
     const brukerinput = passid.value;
     if (brukerinput === '') {
-        console.log("Feltet er tomt");} 
+        console.log("Tomt felt")} 
     else {
-        console.log("Du skrev inn: " + brukerinput);
+        fetch('/check_password', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            password: brukerinput
+        })
+    })
     }
 
 });
