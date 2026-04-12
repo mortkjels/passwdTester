@@ -64,8 +64,6 @@ def is_passwd_easy_to_guess(passwd, score):
         score += 14
     return score
 
-check_if_pass_contains(passwd = passwd, score = score)  
-
 app = Flask(__name__)
 
 @app.route('/')
