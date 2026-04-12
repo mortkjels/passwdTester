@@ -15,7 +15,7 @@ def check_if_pass_contains(passwd, score = score):
     score = is_passwd_upper(passwd, score)
     score = has_passwd_numbers(passwd, score)
     score = has_passwd_special_characters(passwd, score)
-    # score = is_passwd_easy_to_guess(passwd, score)
+    score = is_passwd_easy_to_guess(passwd, score)
     print(failure)
     return print(f'Your password suggestion got a score credit of; {score}')
 
@@ -58,15 +58,13 @@ def has_passwd_special_characters(passwd, score):
         failure.append(feil5)
     return score 
 
-# def is_passwd_easy_to_guess(passwd, score):
-#     for elem in not_allowed:
-#         if elem in passwd:
-#             feil6 = "Combination is too easy"
-#             failure.append(feil6)
-#             break
-#         else: 
-#             score += 14
-#     return score
+def is_passwd_easy_to_guess(passwd, score):
+    if passwd in not_allowed:
+        feil6 = "Combination is too easy"
+        failure.append(feil6)
+    else:
+        score += 14
+    return score
 
 check_if_pass_contains(passwd = passwd, score = score)  
 
