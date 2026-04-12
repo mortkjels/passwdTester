@@ -61,11 +61,15 @@ def is_passwd_easy_to_guess(passwd, score):
 
 app = Flask(__name__)
 
-@app.route('/check_password', methods = ['POST'])
+@app.route('/')
+def home():
+    return render_template('Homepage.html')
 
-def passwordChecker():
-    #ønsker her å hente input feltet som det er skrevet noe deretter sjekke da gjennom.
-    return "yolo"
+@app.route('/check_password', methods = ['POST'])
+def password_check():
+    data = request.get_json()
+    check_if_pass_contains(data.get('brukerinput'),score=score)
+    return jsonify({data})
 
 if __name__ == '__main__':
-    app.run(port=8250)
+    app.run(port=8250, debug=True)

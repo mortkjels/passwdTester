@@ -8,8 +8,8 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="test.css">
-        <script src = "logic.js" defer ></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css') }}"> 
+        <script src="{{ url_for('static', filename='logic.js') }}" defer></script>
     </head>
     
     <body>
