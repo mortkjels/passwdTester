@@ -68,8 +68,7 @@ def home():
 @app.route('/check_password', methods = ['POST'])
 def password_check():
     data = request.get_json()
-    check_if_pass_contains(data.get('brukerinput'),score=score)
-    return jsonify({data})
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(port=8250, debug=True)
