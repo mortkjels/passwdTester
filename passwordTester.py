@@ -68,10 +68,9 @@ def home():
 @app.route('/check_password', methods = ['POST'])
 def password_check():
     data = request.get_json()
-    print(data.get('password'))
-    passwordforcheck = data.get('password')
-    check_if_pass_contains(passwordforcheck)
-    return "hei"
+    pwdcheck = data.get('password')
+    check_if_pass_contains(pwdcheck)
+    return pwdcheck
 
 
 if __name__ == '__main__':
