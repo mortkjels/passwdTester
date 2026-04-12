@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 
-
 not_allowed = ["123", "qwerty", "abc", "ABC", "QWERTY", "321", "1234567890@aB"]
 
 score = 0
