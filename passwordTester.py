@@ -69,6 +69,8 @@ def home():
 def password_check():
     data = request.get_json()
     print(data.get('password'))
+    passwordforcheck = data.get('password')
+    check_if_pass_contains(passwordforcheck)
     return "hei"
 
 
