@@ -1,5 +1,3 @@
-passwd = input ("Write an example for a password, not one your about to use, just to check it's robustness: ")
-
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 
 
@@ -68,19 +66,19 @@ def is_passwd_easy_to_guess(passwd, score):
 
 check_if_pass_contains(passwd = passwd, score = score)  
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
-# @app.route('/')
-# def home():
-#     return render_template('Homepage.html')
+@app.route('/')
+def home():
+    return render_template('Homepage.html')
 
-# @app.route('/check_password', methods = ['POST'])
-# def password_check():
-#     data = request.get_json()
-#     pwdcheck = data.get('password')
-#     check_if_pass_contains(pwdcheck)
-#     return pwdcheck
+@app.route('/check_password', methods = ['POST'])
+def password_check():
+    data = request.get_json()
+    pwdcheck = data.get('password')
+    check_if_pass_contains(pwdcheck)
+    return pwdcheck
 
 
-# if __name__ == '__main__':
-#     app.run(port=8250, debug=True)
+if __name__ == '__main__':
+    app.run(port=8250, debug=True)
