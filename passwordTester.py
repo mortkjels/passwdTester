@@ -15,45 +15,33 @@ def check_if_pass_contains(passwd, score = score):
     score = is_passwd_upper(passwd, score)
     score = has_passwd_numbers(passwd, score)
     score = has_passwd_special_characters(passwd, score)
-    score = is_passwd_easy_to_guess(passwd, score)
+    # score = is_passwd_easy_to_guess(passwd, score)
     print(failure)
     return print(f'Your password suggestion got a score credit of; {score}')
 
-    # raise ValueError("Password missing lowercase letter")
-    # raise ValueError("Password missing uppercase letter")
-    # raise ValueError("Password missing a numeric letter")
-    # raise ValueError("Password is to short, it needs to be 12 characters")
-    # raise ValueError("Password missing a special letter")
-    # raise ValueError("Password contains a sequence that is easy to guess")
-
-
 def is_passwd_lower(passwd,score):
-    for i in range(len(passwd)):
-        if passwd[i].islower():
-            score += 12
-        else:
-            feil1 = "Missing lower letters"
-            failure.append(feil1)
+    if any(char.islower() for char in passwd):
+        score += 12
+    else:
+        feil1 = "Missing lower letters"
+        failure.append(feil1)
     return score
 
 def is_passwd_upper(passwd, score):
-    for i in range(len(passwd)):
-        if passwd[i].isupper():
-            score += 13
-        else:
-            feil2 = "Missing upper letters"
-            failure.append(feil2)
+    if any(char.isupper() for char in passwd):
+        score += 13
+    else:
+        feil2 = "Missing upper letters"
+        failure.append(feil2)
     return score
 
 def has_passwd_numbers(passwd, score):
-    for i in range(len(passwd)):
-        if passwd[i].isnumeric():
-            score += 15
-        else:
-            feil3 = "Missing numbers"
-            failure.append(feil3)
+    if any(char.isdigit() for char in passwd):
+        score += 15
+    else:
+        feil3 = "Missing numbers"
+        failure.append(feil3)
     return score
-
 def is_passwd_long(passwd, score):
     if len(passwd) > 12:
         score += 30
@@ -63,23 +51,22 @@ def is_passwd_long(passwd, score):
     return score
 
 def has_passwd_special_characters(passwd, score):
-    for i in range(len(passwd)):
-        if not passwd[i].isalnum():
-            score += 16
-        else:
-            feil5 = "Missing special characters"
-            failure.append(feil5)
-    return score
+    if any(not char.isalnum() for char in passwd):
+        score += 15
+    else:
+        feil5 = "Missing special letters"
+        failure.append(feil5)
+    return score 
 
-def is_passwd_easy_to_guess(passwd, score):
-    for elem in not_allowed:
-        if elem in passwd:
-            feil6 = "Combination is too easy"
-            failure.append(feil6)
-            break
-        else: 
-            score += 14
-    return score
+# def is_passwd_easy_to_guess(passwd, score):
+#     for elem in not_allowed:
+#         if elem in passwd:
+#             feil6 = "Combination is too easy"
+#             failure.append(feil6)
+#             break
+#         else: 
+#             score += 14
+#     return score
 
 check_if_pass_contains(passwd = passwd, score = score)  
 
