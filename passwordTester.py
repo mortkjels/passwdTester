@@ -1,5 +1,3 @@
-# passwd = input ("Write an example for a password, not one your about to use, to check it's robustness: ")
-
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 
 
