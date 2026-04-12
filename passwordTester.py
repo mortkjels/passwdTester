@@ -68,7 +68,9 @@ def home():
 @app.route('/check_password', methods = ['POST'])
 def password_check():
     data = request.get_json()
-    return jsonify(data)
+    print(data.get('password'))
+    return "hei"
+
 
 if __name__ == '__main__':
     app.run(port=8250, debug=True)
