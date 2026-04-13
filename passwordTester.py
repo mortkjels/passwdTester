@@ -16,6 +16,7 @@ def check_if_pass_contains(passwd, score = score):
     print(failure)
     return print(f'Your password suggestion got a score credit of; {score}')
 
+# Funksjoner som utfører ulike kriterier som er nødvendig for optimal passordgenerering. 
 def is_passwd_lower(passwd,score):
     if any(char.islower() for char in passwd):
         score += 12
@@ -63,19 +64,20 @@ def is_passwd_easy_to_guess(passwd, score):
         score += 14
     return score
 
+#Server initialiseringen. 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/') #Ruten til hjemmesiden
 def home():
     return render_template('Homepage.html')
 
 @app.route('/check_password', methods = ['POST'])
-def password_check():
+def password_check(): #funksjonen for passordsjekk, henter passordet, kjører det gjennom sjekkene. 
     data = request.get_json()
     pwdcheck = data.get('password')
     check_if_pass_contains(pwdcheck)
-    return pwdcheck
+    return pwdcheck #ikke slik jeg skal håndtere response. Skal være i et json format, ikke bare retunere strengen
 
 
 if __name__ == '__main__':
-    app.run(port=8250, debug=True)
+    app.run(port=8250, debug=True) #porten serveren skal gjøre på. 
