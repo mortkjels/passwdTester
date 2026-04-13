@@ -3,5 +3,8 @@
 picture.jpg
 picture2.jpeg
 picture3.avif
+.env
+node_modules/
+
 
 
