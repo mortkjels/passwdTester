@@ -10,6 +10,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}"> 
         <script src="{{ url_for('static', filename='logic.js') }}" defer></script>
+
+        <!-- Når Flask-serveren kjører,
+        brukes url_for til å hente riktige paths til static-filer.
+        Hvis jeg vil teste HTML direkte uten server, må jeg bruke relative paths i stedet -->
+        
+        <!-- <link rel="stylesheet" href="../static/test.css">
+        <script src="../static/logic.js" defer></script> -->
+
     </head>
     
     <body>
